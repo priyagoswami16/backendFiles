@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>ecom</title>
+</head>
+<body>
+    {% for item in data %}
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap -m-4">
+            <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a class="block relative h-48 rounded overflow-hidden">
+                <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="{{item.img}}">
+              </a>
+              <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{{item.name}}</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
+                <p class="mt-1">{{item.price}}</p>
+                <a href="{% url 'managment:detail' item.id %}">Detail</a>
+                <a href="{% url 'managment:update' item.id %}" class="btn btn-info">update</a>
+              </div>
+            </div>
+               
+          </div>
+        </div>
+      </section>
+      {% endfor %}
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<!-- contact form -->
+
+<div class="container" id="con">
+     
+    <h2 class="text-center text-light py-5">Contact-Us</h2>
+    <div class="row d-flex justify-content-center mt-1">
+      <div class="col-6">
+  <form method="post">
+
+    {% csrf_token %}
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col-6">
+        <div class="form-outline">
+          <input type="text"  name="fname" id="form3Example1" class="form-control" placeholder="First name"/>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text"  name="lname" id="form3Example2" class="form-control" placeholder="Last name"/>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="text" name="address" id="form3Example3" class="form-control" placeholder="Address"/>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="email"  name="emailaddress" id="form3Example4" class="form-control" placeholder="Email Address"/>
+    </div>
+
+    <div class="form-outline mb-4">
+      <input type="text"  name="phone" id="form3Example4" class="form-control" placeholder="Phone"/>
+    </div>
+
+    <div class="form-outline mb-4">
+      <textarea class="form-control"  name="message" id="form6Example7" rows="4" placeholder="Message"></textarea>
+    </div>
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-danger  mb-4">Sign up</button>
+   
+    </div>
+  </form>
+      </div>
+    </div>
+   </div>
+  </div>
+
+ 
+
+
+{% endblock %}
